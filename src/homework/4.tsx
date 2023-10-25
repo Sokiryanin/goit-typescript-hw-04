@@ -72,7 +72,10 @@ function MenuComponent({ menus }: PropsMenu) {
   return (
     <>
       {menus.map((menu) => (
-        <div key={menu.id} onClick={() => onSelectedMenu({ id: menu.id })}>
+        <div
+          key={menu.id}
+          onClick={() => onSelectedMenu({ id: menu.id, title: menu.title })}
+        >
           {menu.title}{" "}
           {selectedMenu.id === menu.id ? "Selected" : "Not selected"}
         </div>
